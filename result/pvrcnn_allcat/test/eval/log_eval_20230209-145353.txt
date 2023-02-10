@@ -1,0 +1,273 @@
+2023-02-09 14:53:53,844   INFO  **********************Start logging**********************
+2023-02-09 14:53:53,844   INFO  CUDA_VISIBLE_DEVICES=0,1,2
+2023-02-09 14:53:53,844   INFO  total_batch_size: 6
+2023-02-09 14:53:53,844   INFO  cfg_file         /data/NIA50/50-2/data/NIA50/nia50_all/pvrcnn_allcat/nia50_pvrcnn_allcat_model.yaml
+2023-02-09 14:53:53,844   INFO  batch_size       2
+2023-02-09 14:53:53,844   INFO  workers          4
+2023-02-09 14:53:53,845   INFO  extra_tag        default
+2023-02-09 14:53:53,845   INFO  ckpt             /data/NIA50/50-2/result/pvrcnn/train/ckpt/checkpoint_epoch_17.pth
+2023-02-09 14:53:53,845   INFO  pretrained_model None
+2023-02-09 14:53:53,845   INFO  launcher         pytorch
+2023-02-09 14:53:53,847   INFO  tcp_port         18888
+2023-02-09 14:53:53,847   INFO  local_rank       0
+2023-02-09 14:53:53,847   INFO  set_cfgs         None
+2023-02-09 14:53:53,847   INFO  max_waiting_mins 30
+2023-02-09 14:53:53,847   INFO  start_epoch      0
+2023-02-09 14:53:53,847   INFO  eval_tag         default
+2023-02-09 14:53:53,847   INFO  eval_all         False
+2023-02-09 14:53:53,848   INFO  ckpt_dir         None
+2023-02-09 14:53:53,848   INFO  save_to_file     False
+2023-02-09 14:53:53,848   INFO  infer_time       False
+2023-02-09 14:53:53,848   INFO  mode             test
+2023-02-09 14:53:53,848   INFO  project          /data/NIA50/50-2/result/pvrcnn/test
+2023-02-09 14:53:53,848   INFO  cfg.ROOT_DIR: /data/NIA50/50-2/models/OpenPCDet_aivill
+2023-02-09 14:53:53,848   INFO  cfg.LOCAL_RANK: 0
+2023-02-09 14:53:53,848   INFO  cfg.CLASS_NAMES: ['Small_Car', 'Light_Car', 'Car', 'Van', 'SUV', 'Small_Truck', 'Medium_Truck', 'Large_Truck', 'Mini_Bus', 'Bus', 'Special_Vehicle', 'Two_Wheeler', 'Kickboard', 'Adult', 'Kid']
+2023-02-09 14:53:53,848   INFO  
+cfg.DATA_CONFIG = edict()
+2023-02-09 14:53:53,848   INFO  cfg.DATA_CONFIG.DATASET: CustomDataset
+2023-02-09 14:53:53,848   INFO  cfg.DATA_CONFIG.DATA_PATH: /data/NIA50/50-2/data/NIA50/nia50_all/pvrcnn_allcat
+2023-02-09 14:53:53,848   INFO  cfg.DATA_CONFIG.POINT_CLOUD_RANGE: [-75.2, -150.4, -4, 75.2, 0, 8]
+2023-02-09 14:53:53,848   INFO  cfg.DATA_CONFIG.CLASS_NAMES: ['Small_Car', 'Light_Car', 'Car', 'Van', 'SUV', 'Small_Truck', 'Medium_Truck', 'Large_Truck', 'Mini_Bus', 'Bus', 'Special_Vehicle', 'Two_Wheeler', 'Kickboard', 'Adult', 'Kid']
+2023-02-09 14:53:53,848   INFO  
+cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI = edict()
+2023-02-09 14:53:53,848   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Small_Car: Small_Car
+2023-02-09 14:53:53,848   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Light_Car: Light_Car
+2023-02-09 14:53:53,848   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Car: Car
+2023-02-09 14:53:53,848   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Van: Van
+2023-02-09 14:53:53,848   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.SUV: SUV
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Small_Truck: Small_Truck
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Medium_Truck: Medium_Truck
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Large_Truck: Large_Truck
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Mini_Bus: Mini_Bus
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Bus: Bus
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Special_Vehicle: Special_Vehicle
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Two_Wheeler: Two_Wheeler
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Kickboard: Kickboard
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Adult: Adult
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.MAP_CLASS_TO_KITTI.Kid: Kid
+2023-02-09 14:53:53,849   INFO  
+cfg.DATA_CONFIG.DATA_SPLIT = edict()
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.DATA_SPLIT.train: train
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.DATA_SPLIT.val: val
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.DATA_SPLIT.test: test
+2023-02-09 14:53:53,849   INFO  
+cfg.DATA_CONFIG.INFO_PATH = edict()
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.INFO_PATH.train: ['custom_infos_train.pkl']
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.INFO_PATH.val: ['custom_infos_val.pkl']
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.INFO_PATH.test: ['custom_infos_test.pkl']
+2023-02-09 14:53:53,849   INFO  
+cfg.DATA_CONFIG.POINT_FEATURE_ENCODING = edict()
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.encoding_type: absolute_coordinates_encoding
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.used_feature_list: ['x', 'y', 'z', 'intensity']
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.src_feature_list: ['x', 'y', 'z', 'intensity']
+2023-02-09 14:53:53,849   INFO  
+cfg.DATA_CONFIG.DATA_AUGMENTOR = edict()
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.DISABLE_AUG_LIST: ['placeholder']
+2023-02-09 14:53:53,849   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.AUG_CONFIG_LIST: [{'NAME': 'gt_sampling', 'USE_ROAD_PLANE': False, 'DB_INFO_PATH': ['custom_dbinfos_train.pkl'], 'PREPARE': {'filter_by_min_points': ['Car:5', 'Small_Car:5', 'Light_Car:5', 'SUV:5', 'Van:5', 'Small_Truck:5', 'Medium_Truck:5', 'Large_Truck:5', 'Bus:5', 'Mini_Bus:5', 'Special_Vehicle:5', 'Two_Wheeler:5', 'Kickboard:5', 'Adult:5', 'Kid:5']}, 'SAMPLE_GROUPS': ['Car:20', 'Small_Car:15', 'Light_Car:15', 'SUV:15', 'Van:15', 'Small_Truck:15', 'Medium_Truck:15', 'Large_Truck:15', 'Bus:15', 'Mini_Bus:15', 'Special_Vehicle:15', 'Two_Wheeler:15', 'Kickboard:15', 'Adult:15', 'Kid:15'], 'NUM_POINT_FEATURES': 4, 'DATABASE_WITH_FAKELIDAR': False, 'REMOVE_EXTRA_WIDTH': [0.0, 0.0, 0.0], 'LIMIT_WHOLE_SCENE': True}, {'NAME': 'random_world_flip', 'ALONG_AXIS_LIST': ['x', 'y']}, {'NAME': 'random_world_rotation', 'WORLD_ROT_ANGLE': [-0.78539816, 0.78539816]}, {'NAME': 'random_world_scaling', 'WORLD_SCALE_RANGE': [0.95, 1.05]}]
+2023-02-09 14:53:53,850   INFO  cfg.DATA_CONFIG.DATA_PROCESSOR: [{'NAME': 'mask_points_and_boxes_outside_range', 'REMOVE_OUTSIDE_BOXES': True}, {'NAME': 'shuffle_points', 'SHUFFLE_ENABLED': {'train': True, 'val': False, 'test': False}}, {'NAME': 'transform_points_to_voxels', 'VOXEL_SIZE': [0.1, 0.1, 0.3], 'MAX_POINTS_PER_VOXEL': 5, 'MAX_NUMBER_OF_VOXELS': {'train': 150000, 'val': 150000, 'test': 150000}}]
+2023-02-09 14:53:53,850   INFO  cfg.DATA_CONFIG._BASE_CONFIG_: /data/NIA50/50-2/data/NIA50/nia50_all/pvrcnn_allcat/nia50_pvrcnn_allcat_data.yaml
+2023-02-09 14:53:53,850   INFO  
+cfg.MODEL = edict()
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.NAME: PVRCNN
+2023-02-09 14:53:53,850   INFO  
+cfg.MODEL.VFE = edict()
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.VFE.NAME: MeanVFE
+2023-02-09 14:53:53,850   INFO  
+cfg.MODEL.BACKBONE_3D = edict()
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.BACKBONE_3D.NAME: VoxelBackBone8x
+2023-02-09 14:53:53,850   INFO  
+cfg.MODEL.MAP_TO_BEV = edict()
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.MAP_TO_BEV.NAME: HeightCompression
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.MAP_TO_BEV.NUM_BEV_FEATURES: 256
+2023-02-09 14:53:53,850   INFO  
+cfg.MODEL.BACKBONE_2D = edict()
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.BACKBONE_2D.NAME: BaseBEVBackbone
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.BACKBONE_2D.LAYER_NUMS: [5, 5]
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.BACKBONE_2D.LAYER_STRIDES: [1, 2]
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.BACKBONE_2D.NUM_FILTERS: [128, 256]
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.BACKBONE_2D.UPSAMPLE_STRIDES: [1, 2]
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.BACKBONE_2D.NUM_UPSAMPLE_FILTERS: [256, 256]
+2023-02-09 14:53:53,850   INFO  
+cfg.MODEL.DENSE_HEAD = edict()
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.DENSE_HEAD.NAME: AnchorHeadSingle
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.DENSE_HEAD.CLASS_AGNOSTIC: False
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.DENSE_HEAD.USE_DIRECTION_CLASSIFIER: True
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.DENSE_HEAD.DIR_OFFSET: 0.78539
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.DENSE_HEAD.DIR_LIMIT_OFFSET: 0.0
+2023-02-09 14:53:53,850   INFO  cfg.MODEL.DENSE_HEAD.NUM_DIR_BINS: 2
+2023-02-09 14:53:53,851   INFO  cfg.MODEL.DENSE_HEAD.ANCHOR_GENERATOR_CONFIG: [{'class_name': 'Small_Car', 'anchor_sizes': [[3.27, 1.52, 1.45]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Light_Car', 'anchor_sizes': [[3.36, 1.57, 1.5]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Car', 'anchor_sizes': [[3.85, 1.48, 1.33]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Van', 'anchor_sizes': [[4.26, 1.63, 1.69]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'SUV', 'anchor_sizes': [[3.88, 1.53, 1.49]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Small_Truck', 'anchor_sizes': [[4.75, 1.8, 2.1]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Medium_Truck', 'anchor_sizes': [[4.72, 1.77, 2.14]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Large_Truck', 'anchor_sizes': [[8.01, 2.42, 3.11]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Mini_Bus', 'anchor_sizes': [[6.61, 2.14, 2.62]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Bus', 'anchor_sizes': [[10.12, 2.65, 3.15]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Special_Vehicle', 'anchor_sizes': [[7.2, 2.26, 2.77]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Two_Wheeler', 'anchor_sizes': [[1.86, 0.76, 1.42]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}, {'class_name': 'Kickboard', 'anchor_sizes': [[0.38, 0.36, 0.8]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}, {'class_name': 'Adult', 'anchor_sizes': [[0.6, 0.68, 1.36]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}, {'class_name': 'Kid', 'anchor_sizes': [[0.74, 0.71, 1.4]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}]
+2023-02-09 14:53:53,851   INFO  
+cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG = edict()
+2023-02-09 14:53:53,851   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NAME: AxisAlignedTargetAssigner
+2023-02-09 14:53:53,851   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.POS_FRACTION: -1.0
+2023-02-09 14:53:53,851   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.SAMPLE_SIZE: 512
+2023-02-09 14:53:53,851   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NORM_BY_NUM_EXAMPLES: False
+2023-02-09 14:53:53,851   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.MATCH_HEIGHT: False
+2023-02-09 14:53:53,851   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.BOX_CODER: ResidualCoder
+2023-02-09 14:53:53,851   INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG = edict()
+2023-02-09 14:53:53,851   INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2023-02-09 14:53:53,851   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.cls_weight: 1.0
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.loc_weight: 2.0
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.dir_weight: 0.2
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2023-02-09 14:53:53,852   INFO  
+cfg.MODEL.PFE = edict()
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.NAME: VoxelSetAbstraction
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.POINT_SOURCE: raw_points
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.NUM_KEYPOINTS: 4096
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.NUM_OUTPUT_FEATURES: 128
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.SAMPLE_METHOD: FPS
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.FEATURES_SOURCE: ['bev', 'x_conv3', 'x_conv4', 'raw_points']
+2023-02-09 14:53:53,852   INFO  
+cfg.MODEL.PFE.SA_LAYER = edict()
+2023-02-09 14:53:53,852   INFO  
+cfg.MODEL.PFE.SA_LAYER.raw_points = edict()
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.MLPS: [[16, 16], [16, 16]]
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.POOL_RADIUS: [0.4, 0.8]
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.NSAMPLE: [16, 16]
+2023-02-09 14:53:53,852   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv1 = edict()
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.DOWNSAMPLE_FACTOR: 1
+2023-02-09 14:53:53,852   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.MLPS: [[16, 16], [16, 16]]
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.POOL_RADIUS: [0.4, 0.8]
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.NSAMPLE: [16, 16]
+2023-02-09 14:53:53,853   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv2 = edict()
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.DOWNSAMPLE_FACTOR: 2
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.MLPS: [[32, 32], [32, 32]]
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.POOL_RADIUS: [0.8, 1.2]
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.NSAMPLE: [16, 32]
+2023-02-09 14:53:53,853   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv3 = edict()
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.DOWNSAMPLE_FACTOR: 4
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.MLPS: [[64, 64], [64, 64]]
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.POOL_RADIUS: [1.2, 2.4]
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.NSAMPLE: [16, 32]
+2023-02-09 14:53:53,853   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv4 = edict()
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.DOWNSAMPLE_FACTOR: 8
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.MLPS: [[64, 64], [64, 64]]
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.POOL_RADIUS: [2.4, 4.8]
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.NSAMPLE: [16, 32]
+2023-02-09 14:53:53,853   INFO  
+cfg.MODEL.POINT_HEAD = edict()
+2023-02-09 14:53:53,853   INFO  cfg.MODEL.POINT_HEAD.NAME: PointHeadSimple
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.POINT_HEAD.CLS_FC: [256, 256]
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.POINT_HEAD.CLASS_AGNOSTIC: True
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.POINT_HEAD.USE_POINT_FEATURES_BEFORE_FUSION: True
+2023-02-09 14:53:53,854   INFO  
+cfg.MODEL.POINT_HEAD.TARGET_CONFIG = edict()
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.POINT_HEAD.TARGET_CONFIG.GT_EXTRA_WIDTH: [0.2, 0.2, 0.2]
+2023-02-09 14:53:53,854   INFO  
+cfg.MODEL.POINT_HEAD.LOSS_CONFIG = edict()
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_REG: smooth-l1
+2023-02-09 14:53:53,854   INFO  
+cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.point_cls_weight: 1.0
+2023-02-09 14:53:53,854   INFO  
+cfg.MODEL.ROI_HEAD = edict()
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.ROI_HEAD.NAME: PVRCNNHead
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.ROI_HEAD.CLASS_AGNOSTIC: True
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.ROI_HEAD.SHARED_FC: [256, 256]
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.ROI_HEAD.CLS_FC: [256, 256]
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.ROI_HEAD.REG_FC: [256, 256]
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.ROI_HEAD.DP_RATIO: 0.3
+2023-02-09 14:53:53,854   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG = edict()
+2023-02-09 14:53:53,854   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN = edict()
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_TYPE: nms_gpu
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.MULTI_CLASSES_NMS: False
+2023-02-09 14:53:53,854   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_PRE_MAXSIZE: 9000
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_POST_MAXSIZE: 512
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_THRESH: 0.8
+2023-02-09 14:53:53,855   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST = edict()
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_TYPE: nms_gpu
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.MULTI_CLASSES_NMS: False
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_PRE_MAXSIZE: 4096
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_POST_MAXSIZE: 300
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_THRESH: 0.85
+2023-02-09 14:53:53,855   INFO  
+cfg.MODEL.ROI_HEAD.ROI_GRID_POOL = edict()
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.GRID_SIZE: 6
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.MLPS: [[64, 64], [64, 64]]
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_RADIUS: [0.8, 1.6]
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.NSAMPLE: [16, 16]
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_METHOD: max_pool
+2023-02-09 14:53:53,855   INFO  
+cfg.MODEL.ROI_HEAD.TARGET_CONFIG = edict()
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.BOX_CODER: ResidualCoder
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.ROI_PER_IMAGE: 128
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.FG_RATIO: 0.5
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.SAMPLE_ROI_BY_EACH_CLASS: True
+2023-02-09 14:53:53,855   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_SCORE_TYPE: roi_iou
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_FG_THRESH: 0.75
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH: 0.25
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH_LO: 0.1
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.HARD_BG_RATIO: 0.8
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.REG_FG_THRESH: 0.55
+2023-02-09 14:53:53,856   INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG = edict()
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CLS_LOSS: BinaryCrossEntropy
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.REG_LOSS: smooth-l1
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CORNER_LOSS_REGULARIZATION: True
+2023-02-09 14:53:53,856   INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_cls_weight: 1.0
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_reg_weight: 1.0
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_corner_weight: 1.0
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2023-02-09 14:53:53,856   INFO  
+cfg.MODEL.POST_PROCESSING = edict()
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.POST_PROCESSING.RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.POST_PROCESSING.SCORE_THRESH: 0.1
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.POST_PROCESSING.OUTPUT_RAW_SCORE: False
+2023-02-09 14:53:53,856   INFO  cfg.MODEL.POST_PROCESSING.EVAL_METRIC: kitti
+2023-02-09 14:53:53,857   INFO  
+cfg.MODEL.POST_PROCESSING.NMS_CONFIG = edict()
+2023-02-09 14:53:53,857   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.MULTI_CLASSES_NMS: False
+2023-02-09 14:53:53,857   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_TYPE: nms_gpu
+2023-02-09 14:53:53,857   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_THRESH: 0.1
+2023-02-09 14:53:53,857   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_PRE_MAXSIZE: 4096
+2023-02-09 14:53:53,857   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_POST_MAXSIZE: 500
+2023-02-09 14:53:53,857   INFO  
+cfg.OPTIMIZATION = edict()
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.BATCH_SIZE_PER_GPU: 2
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.NUM_EPOCHS: 80
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.OPTIMIZER: adam_onecycle
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.LR: 0.01
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.WEIGHT_DECAY: 0.01
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.MOMENTUM: 0.9
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.MOMS: [0.95, 0.85]
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.PCT_START: 0.4
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.DIV_FACTOR: 10
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.DECAY_STEP_LIST: [35, 45]
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.LR_DECAY: 0.1
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.LR_CLIP: 1e-07
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.LR_WARMUP: False
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.WARMUP_EPOCH: 1
+2023-02-09 14:53:53,857   INFO  cfg.OPTIMIZATION.GRAD_NORM_CLIP: 10
+2023-02-09 14:53:53,857   INFO  cfg.TAG: nia50_pvrcnn_allcat_model
+2023-02-09 14:53:53,857   INFO  cfg.EXP_GROUP_PATH: data/NIA50/50-2/data/NIA50/nia50_all/pvrcnn_allcat
+2023-02-09 14:53:53,860   INFO  Loading Custom dataset.
+2023-02-09 14:53:53,892   INFO  Total samples for CUSTOM dataset: 6710
+2023-02-09 14:53:57,967   INFO  ==> Loading parameters from checkpoint /data/NIA50/50-2/result/pvrcnn/train/ckpt/checkpoint_epoch_17.pth to CPU
+2023-02-09 14:53:58,349   INFO  ==> Checkpoint trained from version: pcdet+0.6.0+266ff95+py45a6c24
+2023-02-09 14:53:58,370   INFO  ==> Done (loaded 319/319)
+2023-02-09 14:53:58,414   INFO  *************** EPOCH 17 EVALUATION *****************
+2023-02-09 15:03:59,899   INFO  *************** Performance of EPOCH 17 *****************
+2023-02-09 15:03:59,900   INFO  Generate label finished(sec_per_example: 0.0896 second).
+2023-02-09 15:03:59,900   INFO  recall_roi_0.3: 0.000000
+2023-02-09 15:03:59,900   INFO  recall_rcnn_0.3: 0.000000
+2023-02-09 15:03:59,900   INFO  recall_roi_0.5: 0.000000
+2023-02-09 15:03:59,900   INFO  recall_rcnn_0.5: 0.000000
+2023-02-09 15:03:59,900   INFO  recall_roi_0.7: 0.000000
+2023-02-09 15:03:59,901   INFO  recall_rcnn_0.7: 0.000000
+2023-02-09 15:03:59,906   INFO  Average predicted number of objects(6710 samples): 25.256
+2023-02-09 15:04:00,255   INFO  No ground-truth boxes for evaluation
+2023-02-09 15:04:00,256   INFO  Result is save to /data/NIA50/50-2/result/pvrcnn/test/eval
+2023-02-09 15:04:00,256   INFO  ****************Evaluation done.*****************
