@@ -1,0 +1,15 @@
+# files
+*.jpg
+*.png
+*.mp4
+*.pt
+*.pth
+*.ckpt
+*.json
+
+
+# folders
+data/*
+result/*
+kimgh/test/*
+workers/*
