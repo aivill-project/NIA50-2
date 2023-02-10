@@ -1,0 +1,13 @@
+
+[submodule "models/DeepFusionMOT_aivill"]
+	path = models/DeepFusionMOT_aivill
+	url = https://github.com/aivill-project/DeepFusionMOT_aivill.git
+[submodule "models/TrackEval_aivill"]
+	path = models/TrackEval_aivill
+	url = https://github.com/aivill-project/TrackEval_aivill.git
+[submodule "models/OpenPCDet_aivill"]
+	path = models/OpenPCDet_aivill
+	url = https://github.com/aivill-project/OpenPCDet_aivill.git
+[submodule "models/YOLOv5_aivill"]
+	path = models/YOLOv5_aivill
+	url = https://github.com/aivill-project/YOLOv5_aivill.git
