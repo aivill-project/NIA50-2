@@ -20,13 +20,12 @@ test: test.txt # test images (optional)
 # Classes
 names:
   0: 'Car'
-  1: 'Van'
-  2: 'SUV'
-  3: 'Truck'
-  4: 'Bus'
-  5: 'Special_Vehicle'
-  6: 'Two_Wheeler'
-  7: 'Person'
+  1: 'SUV & Van'
+  2: 'Truck'
+  3: 'Bus'
+  4: 'Special_Vehicle'
+  5: 'Two_Wheeler'
+  6: 'Person'
 
 # 초기 훈련 시 중복객체로 작성함 (재훈련 필요)
 # names:
