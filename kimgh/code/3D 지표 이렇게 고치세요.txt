@@ -1,0 +1,5 @@
+INFO  Car AP@0.5
+bbox AP:85.9934
+bev  AP:54.7984
+3d   AP:54.7912
+aos  AP:75.14

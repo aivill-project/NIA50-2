@@ -12,6 +12,7 @@
 
 # folders
 data/*
+result/*
 result/deepfusionmot_allcat/*
 result/yolov5_allcat/test/*
 kimgh/test/*
