@@ -39,19 +39,39 @@ if int(str(sys.version_info[0]) + str(sys.version_info[1])) < 311:
     print("경고: 파이썬 버전이 3.11보다 낮습니다. 파이썬 버전이 3.11 이상이면 프로그램이 더 빠르게 작동합니다.")
 
 def get_json_data_3d(json_files_path: list, save_data_info: str = None, save_stat_to: str = None):
-    # if there is a file on save_data_info or save_stat_to ask the user if they want to overwrite the file
+    """if there is a file on save_data_info or save_stat_to ask the user if they want to overwrite the file
+
+    Args:
+        json_files_path (list): 레이블 파일 상위 경로
+        save_data_info (str, optional): 데이터 객체 수 등 저장 경로. Defaults "/info.csv".
+        save_stat_to (str, optional): 데이터 객체 별 통계 csv 저장 경로. Defaults to "/stat.csv".
+
+    Returns:
+        _type_: dp_stat, class_statistic
+    """
+    
+    #클래스 종류 및 개수
+    def get_class_simple_statistic(dp_stat: pd.DataFrame):
+        classes = Counter(dp_stat["class"]) # e.g. {"Car": 19000,, "SUV": 5000}
+        print(classes)
+        # print f"classes: {classes}" for every 3 classes and goes to the next line
+        print(f"classes: {', '.join([f'{key}: {value}' for key, value in classes.items()])}")
+        return classes
+    
     if os.path.isfile(save_data_info):
         answer_info = input(f"Warning: The file {save_data_info} already exists. Do you want to overwrite it? (y/n):")
     if os.path.isfile(save_stat_to):
         answer_stat = input(f"Warning: The file {save_stat_to} already exists. Do you want to overwrite it? (y/n): ")
-        if answer_stat.lower() == "n":
-            class_statistic = pd.read_csv(save_stat_to)
     
     if answer_info.lower() != "n":
-        dp = pd.DataFrame(columns=["class", "position x", "position y", "position z", "rotation", "scale l", "scale w", "scale h", "file_name"])
-        # print("Collecting 3d label data...")
+        # dp = pd.DataFrame(columns=["class", "position x", "position y", "position z", "rotation", "scale l", "scale w", "scale h", "file_name"])
+        print("Collecting 3d label data...")
         print("3D 레이블 데이터 수집 중...")
-        for file in tqdm(json_files_path):
+
+        dp_ls = []
+        for j, file in enumerate(tqdm(json_files_path)):
+            globals()[f'dp{j}'] = pd.DataFrame()
+
             with open(file, 'r') as f:
                 json_data = json.load(f)
                 for i in range(len(json_data)):
@@ -68,7 +88,10 @@ def get_json_data_3d(json_files_path: list, save_data_info: str = None, save_sta
                         json_data[i]["psr"]["scale"]["z"], 
                         file_name]
                     frame_data = pd.DataFrame([row], columns=["class", "position x", "position y", "position z", "rotation", "scale l", "scale w", "scale h", "file_name"])
-                    dp = pd.concat([dp, frame_data], axis=0)
+                    globals()[f'dp{j}'] = pd.concat([globals()[f'dp{j}'], frame_data], axis=0)
+            dp_ls.append(globals()[f'dp{j}'])
+            
+        dp = pd.concat(dp_ls)
 
         # make the dp's index to descending order
         dp = dp.reset_index(drop=True)
@@ -77,28 +100,6 @@ def get_json_data_3d(json_files_path: list, save_data_info: str = None, save_sta
         print(f"데이터 정보를 '{save_data_info}'에 저장하였습니다.")
     else:
         dp_stat = pd.read_csv(save_data_info)
-    
-        def get_class_simple_statistic(dp_stat: pd.DataFrame):
-            #클래스 종류 및 개수
-            classes = Counter(dp_stat["class"])
-            print(classes)
-            # print f"classes: {classes}" for every 3 classes and goes to the next line
-            print(f"classes: {', '.join([f'{key}: {value}' for key, value in classes.items()])}")
-            
-            # position x, y, z 범위
-            # min, max of position x, y, z
-            # print(f"min of position x: {min(dp_stat['position x']):.2f}, max of position x: {max(dp_stat['position x']):.2f}")
-            # print(f"min of position y: {min(dp_stat['position y']):.2f}, max of position y: {max(dp_stat['position y']):.2f}")
-            # print(f"min of position z: {min(dp_stat['position z']):.2f}, max of position z: {max(dp_stat['position z']):.2f}")
-
-            # # rotation 범위
-            # print(f"min of rotation: {min(dp_stat['rotation']):.2f}, max of rotation: {max(dp_stat['rotation']):.2f}")
-
-            # # scale l, w, h 범위
-            # print(f"min of scale l: {min(dp_stat['scale l']):.2f}, max of scale l: {max(dp_stat['scale l']):.2f}")
-            # print(f"min of scale w: {min(dp_stat['scale w']):.2f}, max of scale w: {max(dp_stat['scale w']):.2f}")
-            # print(f"min of scale h: {min(dp_stat['scale h']):.2f}, max of scale h: {max(dp_stat['scale h']):.2f}")
-            return classes
     
     classes = get_class_simple_statistic(dp_stat)
             
@@ -474,13 +475,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--from_path', '-f', type=str, help='데이터셋 폴더 위치')
     parser.add_argument('--to_path', '-t', type=str, help='데이터를 옮길 폴더 위치', default=None)
+
     parser.add_argument('--all', '-a', action='store_true', help='모든 레이블, 이미지, PCD파일을 변환')
+
     parser.add_argument('--pcd', '-p', action='store_true', help='PCD 파일을 변환')
     parser.add_argument('--label_3d', '-l3', action='store_true', help='3D 레이블을 json에서 OpenPCD에 맞는 txt로 변환')
     parser.add_argument('--imagesets_3d', '-is3', action='store_true', help='3D 데이터를 train, val, test 세트로 분할')
+
     parser.add_argument('--img', '-i', action='store_true', help='이미지를 변환(이름만 변경)')
     parser.add_argument('--label_2d', '-l2', action='store_true', help='2D 레이블을 json에서 YOLOv5에 맞는 txt로 변환')
     parser.add_argument('--imagesets_2d', '-is2', action='store_true', help='2D 데이터를 train, val, test 세트로 분할')
+
     parser.add_argument('--stat_3d', '-s3', action='store_true', help='3D 레이블의 통계 정보 확인')
     parser.add_argument('--stat_output_3d', '-so3', type=str, help='3D 통계 정보 저장 위치', default="./stat_3d.csv")
     parser.add_argument('--stat_2d', '-s2', action='store_true', help='2D 레이블의 통계 정보 확인')
