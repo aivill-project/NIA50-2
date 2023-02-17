@@ -11,6 +11,7 @@ if __name__ == "__main__":
     parser.add_argument("--data_path", "-d", type=str, help="image data path")
     parser.add_argument("--ext", "-e", type=str, default="jpg", help="image extension")
     parser.add_argument("--output", "-o", type=str, default="./", help="output video path")
+    parser.add_argument("--fps", "-f", type=int, default=30, help="frame per second")
     args = parser.parse_args()
 
     if args.output is None:
@@ -20,8 +21,8 @@ if __name__ == "__main__":
         
     # load images
     images_path = Path(args.data_path)
-    print("collecting images from {}".format(images_path)
-    image_files = sorted([str(p) for p in images_path.rglob(f"**/*.{arg.ext}}")])
-    clip = ImageSequenceClip(image_files, fps=30)
+    print("collecting images from {}".format(images_path))
+    image_files = sorted([str(p) for p in images_path.rglob(f"**/*.{args.ext}")])
+    clip = ImageSequenceClip(image_files, fps=args.fps)
 
-    clip.write_videofile(os.path.join(args.output, "video.mp4"), fps=30)
+    clip.write_videofile(os.path.join(args.output, "video.mp4"), fps=args.fps)
