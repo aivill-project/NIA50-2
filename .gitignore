@@ -11,6 +11,7 @@
 *.pkl
 
 # folders
+final/*
 data/*
 result/*
 result/deepfusionmot_allcat/*
